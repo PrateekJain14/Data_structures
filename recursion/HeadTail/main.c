@@ -2,12 +2,21 @@
 #include <stdlib.h>
 
 // RECURSION PRACTICE
-
+// HEAD RECUSRSION -> function call itself in first statement and all processing is done at return time.
 void fun1(int x){
     if(x>0){
-    fun1(x-1);   // HEAD RECUSRSION
+    fun1(x-1);
     printf("%d ", x);
-    // fun1(x-1);  TAIL RECURSION
+    }
+}
+
+
+// TAIL RECURSION -> when function call is the last statement and on return no extra work need to be done
+// better to use loop is place of it as mostly it requires more space.
+void fun3(int x){
+    if(x>0){
+    printf("\n%d ", x);
+    fun3(x-1);
     }
 }
 
@@ -24,6 +33,7 @@ int main()
 {
     int x = 5;
     fun1(x);
+    fun3(x);
     printf("\nfun2 result  : %d", fun2(x));
     return 0;
 }
