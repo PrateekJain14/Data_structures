@@ -16,7 +16,7 @@ void display(struct Array arr){
 // inserting in an array at index
 int del(struct Array *arr,int index){
 if(arr->length == 0){
-    return 0;
+    return -1;
 }
 if(index >= 0 || index <=arr->length){
 int deletedEle = arr->A[index];
@@ -33,7 +33,9 @@ int main()
     int ele;
     struct Array arr = {{2,3,4,5,6},10,5};
     ele = del(&arr,3);
+    if(ele != -1){
     cout<<"\n Deleted element :"<< ele;
+    }
     display(arr);
     return 0;
 }
