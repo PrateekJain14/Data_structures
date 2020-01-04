@@ -25,14 +25,59 @@ for(int i=0; i <= arr.length-1; i++ ){
 return -1;
 }
 
+// Binary search--> array need to be sorted
+
+int BinarySearch(struct Array arr,int key){
+int low=0;
+int high = arr.length-1;
+int mid;
+while(low<= high){
+    mid = (low+high)/2;
+    if(arr.A[mid]== key)
+        return mid;
+    else if(arr.A[mid] > key)
+        high = mid -1;
+    else
+        low = mid + 1;
+
+}
+return -1;
+}
+
+// Binary search--> array need to be sorted (Recursive version)
+
+int BinarySearchRecursion(struct Array arr,int key,int low, int high){
+int mid;
+while(low<= high){
+    mid = (low+high)/2;
+    if(arr.A[mid]== key)
+        return mid;
+    else if(arr.A[mid] > key)
+        return BinarySearchRecursion(arr,key,low,mid-1);
+    else
+        return BinarySearchRecursion(arr,key,mid + 1,high);
+
+}
+return -1;
+}
+
 
 int main()
 {
-    int ele;
+    int ele,searchBinary;
     struct Array arr = {{2,3,4,5,6},10,5};
     ele = LinearSearch(arr,3);
     if(ele != -1){
     cout<<"\n element found at position  :"<< ele+1;
+    }
+    searchBinary = BinarySearch(arr,3);
+    if(searchBinary != -1){
+    cout<<"\n Binary search element found at position  :"<< searchBinary+1;
+    }
+
+    searchBinary = BinarySearchRecursion(arr,3,0,arr.length-1);
+    if(searchBinary != -1){
+    cout<<"\n Binary search recursion element found at position  :"<< searchBinary+1;
     }
     //display(arr);
     return 0;
