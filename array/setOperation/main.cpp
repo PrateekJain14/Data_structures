@@ -13,12 +13,7 @@ void display(struct Array arr){
     }
 }
 
-void swaping(int *a,int *b){
-int temp ;
-temp = *a;
-*a= *b;
-*b = temp;
-}
+// FOR SORTED ARRAY
 
 struct Array * Union(struct Array arr1,struct Array arr2){
 int i=0,j=0,k=0;
