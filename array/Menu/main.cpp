@@ -6,7 +6,7 @@ using namespace std;
 struct Array{
     int *A;
     int size;
-    int length;
+    int length=0;
 };
 
 
@@ -90,7 +90,7 @@ for(int i=arr->length-1; i >= index; i-- ){
     arr->A[i+1] = arr->A[i];
 }
 arr->A[index]= val;
-arr->length++;s
+arr->length++;
 }
 }
 
