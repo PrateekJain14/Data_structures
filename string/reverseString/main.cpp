@@ -1,5 +1,6 @@
 #include <iostream>
 #include  <string>
+#include <cctype>
 using namespace std;
 
 void reverseString(char name[],int length){
