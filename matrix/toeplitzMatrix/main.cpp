@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+// Toeplitz matrix-  matrix whose all diagonal elements are equal. To store it only first row and column is required
 class matrix{
 private:
     int *a;
