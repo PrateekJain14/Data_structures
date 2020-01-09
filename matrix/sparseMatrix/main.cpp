@@ -10,7 +10,7 @@ public:
 };
 
 class SparseMatrix{
-private:
+private: 
     int row;
     int col;
     int num;
