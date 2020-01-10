@@ -39,6 +39,43 @@ class Polynomial{
         }
     }
 
+    Polynomial * add(Polynomial *p){
+        Polynomial *add;
+        cout<<n<<p->n;
+        if(n==0){
+          return p;
+        }
+        else if(p->n == 0){
+            return this;
+        }
+        else{
+            int i = 0 , j = 0, k = 0;
+            add = new Polynomial(n+p->n);
+            while(i<n && j<p->n){
+                if(ele[i].expo > p->ele[j].expo){
+                    add->ele[k++] = ele[i++];
+                }
+                else if(ele[i].expo < p->ele[j].expo){
+                    add->ele[k++] = p->ele[j++];
+                }
+                else{
+                    add->ele[k].expo = ele[i].expo;
+                    add->ele[k].coff = ele[i].coff + p->ele[j].coff;
+                    k++;
+                    i++;
+                    j++;
+                }
+            }
+            while(i<n)
+                add->ele[k++] = ele[i++];
+            while(j<p->n)
+                add->ele[k++] = ele[j++];
+            add->n = k;
+            return add;
+        }
+    }
+
+
 };
 
 
@@ -53,11 +90,13 @@ int main()
     cin>>n;
     Polynomial poly2(n);
     poly2.create();
+    Polynomial *p3 = poly.add(&poly2);
     cout<<"Polynomial 1 :";
     poly.display();
     cout<<"Polynomial 2 :";
     poly2.display();
-
+    cout<<"Polynomial after adding :";
+    p3->display();
 
 
     return 0;
