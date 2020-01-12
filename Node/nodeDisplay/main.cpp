@@ -37,6 +37,34 @@ void displayRecursive(struct Node *newptr){
         displayRecursive(newptr->next);
     }
 }
+
+int countNode(struct Node *ptr){
+    int count=0;
+    while(ptr != NULL){
+        count++;
+        ptr = ptr->next;
+    }
+    return count;
+}
+
+int recursiveCount(struct Node *ptr){
+    if(ptr == NULL){
+        return 0;
+    }
+    else{
+      return recursiveCount(ptr->next)+1;
+    }
+}
+
+int sumNode(struct Node *ptr){
+   int sum=0;
+    while(ptr != NULL){
+        sum += ptr->n;
+        ptr = ptr->next;
+    }
+    return sum;
+}
+
 int main()
 {
     int a[]={1,3,5,7,9};
@@ -44,5 +72,8 @@ int main()
     display(first);
     cout<<"first    :"<<first->n<<endl;
     displayRecursive(first);
+    cout<<"Total number of nodes    :"<<countNode(first)<<" Recursive   :"<<recursiveCount(first)<<endl;
+    cout<<"Sum of nodes    :"<<sumNode(first)<<endl;
+
     return 0;
 }
