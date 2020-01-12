@@ -29,11 +29,20 @@ void display(struct Node *newptr){
         newptr = newptr->next;
     }
 }
+
+//Display using recursion
+void displayRecursive(struct Node *newptr){
+    if(newptr != NULL){
+        cout<<newptr->n<<endl;
+        displayRecursive(newptr->next);
+    }
+}
 int main()
 {
     int a[]={1,3,5,7,9};
     create(a,5);
     display(first);
-    cout<<"first    :"<<first->n;
+    cout<<"first    :"<<first->n<<endl;
+    displayRecursive(first);
     return 0;
 }
