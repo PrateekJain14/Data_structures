@@ -65,6 +65,30 @@ int sumNode(struct Node *ptr){
     return sum;
 }
 
+int maxNode(struct Node *ptr){
+   int max= -32768;
+    while(ptr != NULL){
+        if(max < ptr->n)
+            max = ptr->n;
+        ptr = ptr->next;
+    }
+    return max;
+}
+
+int recursiveMax(struct Node *ptr){
+   int x=0;
+    if(ptr == 0){
+        return INT_MIN;
+    }
+    else{
+        x = recursiveMax(ptr->next);
+        if(x > ptr->n )
+            return x;
+        else
+            return ptr->n;
+    }
+}
+
 int main()
 {
     int a[]={1,3,5,7,9};
@@ -74,6 +98,7 @@ int main()
     displayRecursive(first);
     cout<<"Total number of nodes    :"<<countNode(first)<<" Recursive   :"<<recursiveCount(first)<<endl;
     cout<<"Sum of nodes    :"<<sumNode(first)<<endl;
+    cout<<"Max element in Link list    :"<<maxNode(first)<<" Recursive   :"<<recursiveMax(first)<<endl;
 
     return 0;
 }
