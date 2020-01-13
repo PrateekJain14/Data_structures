@@ -89,6 +89,15 @@ int recursiveMax(struct Node *ptr){
     }
 }
 
+Node * searchNode(struct Node *ptr, int key){
+    while(ptr != NULL){
+        if(ptr->n == key)
+            return ptr;
+        ptr = ptr->next;
+    }
+    return NULL;
+}
+
 int main()
 {
     int a[]={1,3,5,7,9};
@@ -99,6 +108,9 @@ int main()
     cout<<"Total number of nodes    :"<<countNode(first)<<" Recursive   :"<<recursiveCount(first)<<endl;
     cout<<"Sum of nodes    :"<<sumNode(first)<<endl;
     cout<<"Max element in Link list    :"<<maxNode(first)<<" Recursive   :"<<recursiveMax(first)<<endl;
+    struct Node *p = searchNode(first,5);
+    cout<<"Search element in Link list    :"<<p->n;
+
 
     return 0;
 }
