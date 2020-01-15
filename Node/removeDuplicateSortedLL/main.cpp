@@ -31,36 +31,31 @@ ptr =  ptr->next;
 }
 }
 
-void del(struct Node *ptr,int loc){
-struct Node *p;
-if(ptr == NULL)
-return;
-if(loc == 1){
-p = first;
-first =  first->next;
-delete p;
-}
-else{
-for(int i=0;i<loc-1 && ptr;i++){
-p = ptr;
-ptr = ptr->next;
-}
-if(ptr){
-p->next = ptr->next;
-delete ptr;
+void delDuplicate(struct Node* p){
+struct Node *q,*temp ;
+q = p->next;
+while(q != NULL){
+    if(p->data != q->data){
+        p = q;
+        q = q->next;
+    }
+    else{
+      p->next = q->next;
+      delete q;
+      q = p->next;
+    }
 }
 }
-}
+
 
 int main()
 {
     int pos;
-    int a[] = {10,15,20,25,30};
-    create(a,5);
+    int a[] = {10,15,15,25,30,30,35};
+    create(a,7);
     display(first);
-    cout<<"\nEnter the node you want to delete  :";
-    cin>>pos;
-    del(first,pos);
+    cout<<"\n------------\n";
+    delDuplicate(first);
     display(first);
     return 0;
 }
