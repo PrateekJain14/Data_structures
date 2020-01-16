@@ -41,7 +41,14 @@ while(p !=  NULL){
 first = q;
 }
 
-void recursivereverse(){
+void recursivereverse(Node *q,Node *p){
+    if(p != NULL){
+        recursivereverse(p,p->next);
+        p->next = q;
+    }
+    else{
+        first = q;
+    }
 }
 
 int main()
@@ -51,6 +58,9 @@ int main()
     display(first);
     cout<<"----------\n";
     reverse(first);
+    display(first);
+    cout<<"----------\n";
+    recursivereverse(NULL,first);
     display(first);
 
     return 0;
