@@ -23,8 +23,21 @@ for(int i=1;i<n;i++){
 }
 }
 
+int length(struct Node *newptr){
+    int len = 0;
+    do{
+        len++;
+        newptr = newptr->next;
+    }while(newptr != head);
+    return len;
+}
+
 void insert(int loc, int data){
      Node *p,*t;
+     if(loc < 0 || loc > length(head)){
+        return;
+     }
+
      if(loc == 0){
         t = new Node;
         t->n = data;
@@ -54,6 +67,39 @@ void insert(int loc, int data){
 
 }
 
+int del(int pos){
+ Node *p,*q;
+ int x;
+ if(pos < 0 || pos > length(head)){
+        return -1;
+ }
+ if(pos == 1){
+    while(p->next != head){
+        p = p->next;
+    }
+    x = head->n;
+    if(head == p){
+        delete head;
+        head = NULL;
+    }
+    else{
+        p->next = head->next;
+        delete head;
+        head = p->next;
+    }
+ }
+ else{
+    p = head;
+    for(int i = 0;i<pos - 2;i++)
+            p = p->next;
+    q = p->next;
+    p->next = q->next;
+    x = q->n;
+    delete q;
+ }
+ return x;
+}
+
 void display(struct Node *newptr){
    do{
         cout<<newptr->n<<endl;
@@ -81,5 +127,9 @@ int main()
     insert(0,2);
     insert(3,4);
     Rdisplay(head);
+    cout<<"\n============\n";
+    cout<<"deleted element  :"<<del(1)<<endl;
+    cout<<"deleted element  :"<<del(3)<<endl;
+    display(head);
     return 0;
 }
