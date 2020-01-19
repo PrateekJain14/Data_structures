@@ -23,6 +23,37 @@ for(int i=1;i<n;i++){
 }
 }
 
+void insert(int loc, int data){
+     Node *p,*t;
+     if(loc == 0){
+        t = new Node;
+        t->n = data;
+        if(head == NULL){
+            head = t;
+            head->next =head;
+        }
+        else{
+            p = head;
+            while(p->next != head){
+                p = p->next;
+            }
+            p->next = t;
+            t->next = head;
+            head = t;
+        }
+     }
+     else{
+         p = head;
+         for(int i = 0;i<loc - 1;i++)
+            p = p->next;
+         t = new Node;
+         t->n = data;
+         t->next = p->next;
+         p->next = t ;
+     }
+
+}
+
 void display(struct Node *newptr){
    do{
         cout<<newptr->n<<endl;
@@ -47,6 +78,8 @@ int main()
 
     display(head);
     cout<<"\n============\n";
+    insert(0,2);
+    insert(3,4);
     Rdisplay(head);
     return 0;
 }
