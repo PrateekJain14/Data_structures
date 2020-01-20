@@ -31,6 +31,15 @@ while(ptr != NULL){
 }
 }
 
+int len(struct Node* ptr){
+    int length = 0;
+while(ptr != NULL){
+    length++;
+    ptr = ptr->next;
+}
+return length;
+}
+
 int main()
 {
     int a[] = {2,4,6,8,10,20,30,33};
@@ -38,7 +47,7 @@ int main()
     cout<<"----------\n";
     display(first);
     cout<<"----------\n";
-
+    cout<<"Length is : "<< len(first);
 
     return 0;
 }
