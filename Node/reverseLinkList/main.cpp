@@ -9,7 +9,7 @@ struct Node * next;
 void create(int a[], int len){
 struct Node *p,*last;
 first = new Node;
-first->data = a[0];
+first->data = a[0];    
 first->next = NULL;
 last = first;
 for(int i=1;i<len;i++){
