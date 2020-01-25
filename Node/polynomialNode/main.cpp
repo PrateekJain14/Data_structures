@@ -7,63 +7,42 @@ struct Node
     int coff;
     int pow;
     struct Node * next;
-};
+}*first=NULL;
 
 
 int main()
 {
-    int row,col,nonz;
-    cout<<"\nEnter number of rows :";
-    cin>>row;
-    cout<<"\nEnter total number of columns :";
-    cin>>col;
+    int nonz;
+    struct Node  *last,*temp;
 
-    // Sparse matrix create
-    struct Node *A[row], *last,*temp;
-    for(int i =0 ; i < row; i++)
-    {
-        cout<<"\nEnter Number of non Zero elements in "<<i+1<<" row :";
-        cin>>nonz;
-        last = NULL;
-        if(nonz > 0)
-        {
-            A[i] = new Node;
-            cout<<"\n Enter column number :";
-            cin>>A[i]->col;
-            cout<<"\n Enter data  :";
-            cin>>A[i]->data;
-            A[i]->next = NULL;
-            last = A[i];
-            if(nonz > 1)
-            {
-                for(int j=1; j<nonz; j++)
-                {
-                    temp = new Node;
-                    cout<<"\n Enter column number :";
-                    cin>>temp->col;
-                    cout<<"\n Enter data  :";
-                    cin>>temp->data;
-                    last->next = temp;
-                    temp->next = NULL;
-                }
-            }
-        }
+    cout<<"\nEnter Number of non Zero elements :";
+    cin>>nonz;
+
+    first = new Node;
+    cout<<"\nEnter Coff :";
+    cin>>first->coff;
+    cout<<"\nEnter power :";
+    cin>>first->pow;
+
+    first->next = NULL;
+    last = first;
+    for(int i=1;i<nonz;i++){
+    temp = new Node;
+    cout<<"\nEnter Coff :";
+    cin>>temp->coff;
+    cout<<"\nEnter power :";
+    cin>>temp->pow;
+
+    temp->next = NULL;
+    last->next = temp;
+    last = temp;
     }
 
-    struct Node *ptr;
-
-    for(int i=0;i<row;i++){
-            ptr = A[i];
-        for(int j=0;j<col;j++){
-            if(j == ptr->col){
-                cout<<ptr->data << " ";
-                ptr = ptr->next? ptr->next:ptr;
-            }
-            else{
-                cout<< "0 ";
-            }
-        }
-        cout<<"\n";
+    temp = first;
+    while(temp){
+        cout<<temp->coff<<"x"<<temp->pow;
+        temp = temp->next;
+        if(temp) cout<<" + ";
     }
 
 
