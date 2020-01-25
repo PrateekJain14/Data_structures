@@ -4,8 +4,8 @@ using namespace std;
 
 struct Node
 {
-    int col;
-    int data;
+    int coff;
+    int pow;
     struct Node * next;
 };
 
