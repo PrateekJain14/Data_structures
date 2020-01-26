@@ -28,6 +28,33 @@ st->top--;
 return ele;
 }
 
+int peek(struct st,int pos){
+if(st.top-pos+1 < 0){
+    return -1;
+}
+return st.s[st.top-pos+1];
+}
+
+int stackTop(struct st){
+if(st.top == -1){
+    return -1;
+}
+return st.s[st.top];
+}
+
+bool isEmpty(stack st){
+    if(st.top == -1){
+        return true;
+    }
+    return false;
+}
+
+bool isFull(stack st){
+    if(st.top == st.size-1){
+        return true;
+    }
+    return false;
+}
 
 int main()
 {
