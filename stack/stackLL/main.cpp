@@ -20,7 +20,20 @@ void push(int ele){
     }
 }
 
-
+int pop(){
+struct Node *temp;
+if(top == NULL){
+    cout<<"\nUnderflow";
+    return -1;
+}
+else{
+    temp = top;
+    int ele = top->data;
+    top = top->next;
+    delete temp;
+    return ele;
+}
+}
 
 void disp(struct Node *p){
     while(p){
@@ -40,7 +53,10 @@ int main()
     push(60);
 
     disp(top);
-
+    cout<<"\n----------------\n";
+    cout<<pop()<<endl;
+    cout<<"\n----------------\n";
+    disp(top);
 
     return 0;
 }
