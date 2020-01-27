@@ -42,21 +42,38 @@ void disp(struct Node *p){
     }
 }
 
+int peek(){
+if(top){
+    return top->data;
+}
+return -1;
+}
+
+bool isEmpty(){
+if(top == NULL){
+    return true;
+}
+return false;
+}
 
 int main()
 {
+    cout<<"Stack Empty :"<<isEmpty()<<endl;
     push(10);
     push(20);
     push(30);
     push(40);
     push(50);
     push(60);
-
+    cout<<"----------------\n";
     disp(top);
     cout<<"\n----------------\n";
     cout<<pop()<<endl;
     cout<<"\n----------------\n";
     disp(top);
-
+    cout<<"\n----------------\n";
+    cout<<"Peek :"<<peek()<<endl;
+    cout<<"----------------\n";
+    cout<<"Stack Empty :"<<isEmpty()<<endl;
     return 0;
 }
