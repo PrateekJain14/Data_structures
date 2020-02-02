@@ -17,7 +17,7 @@ public:
             a[j-i] = x;
         }
         else{
-            a[m+(i-j)] = x;
+            a[m+(i-j)] = x; 
         }
     }
 
