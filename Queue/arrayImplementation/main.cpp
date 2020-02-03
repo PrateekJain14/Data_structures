@@ -29,3 +29,33 @@ int dequeue(struct Queue *q){
     if(q->front == q->rear){
         cout<<"Queue is empty";
     }
+    else{
+        q->front++;
+        x = q->Q[q->front];
+    }
+    return x;
+}
+
+void display(struct Queue q){
+    for(int i= q.front+1;i<=q.rear;i++){
+        cout<<q.Q[i]<<"  ";
+    }
+    cout<<"\n";
+}
+
+int main()
+{
+    struct Queue q;
+    create(&q,5);
+
+    enqueue(&q,5);
+     enqueue(&q,10);
+      enqueue(&q,15);
+
+    display(q);
+
+    cout<<"Deleted element is :"<<dequeue(&q)<<"\n";
+
+    display(q);
+    return 0;
+}
