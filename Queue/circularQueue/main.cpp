@@ -38,9 +38,11 @@ int dequeue(struct Queue *q){
 }
 
 void display(struct Queue q){
-    for(int i= q.front+1;i<=q.rear;i++){
+    int i = q.front+1;
+    do{
         cout<<q.Q[i]<<"  ";
-    }
+        i = (i+1)%q.size;
+    }while(i!= (q.rear+1)%q.size);
     cout<<"\n";
 }
 
@@ -56,6 +58,8 @@ int main()
     display(q);
 
     cout<<"Deleted element is :"<<dequeue(&q)<<"\n";
+    enqueue(&q,20);
+     enqueue(&q,25);
 
     display(q);
     return 0;
