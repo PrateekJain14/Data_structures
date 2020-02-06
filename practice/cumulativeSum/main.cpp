@@ -12,12 +12,23 @@ for(int i=1;i<size;i++){
 }
 }
 
-int findSumRange(int a[], int low , int high){
+void display(int a[]){
+    for(int i=0;i<5;i++){
+        cout<<a[i]<<" ";
+    }
+    cout<<"\n";
+}
+
+int findSumRange(int low , int range){
+    return (prefix[range] - prefix[low-1]);
 }
 
 int main()
 {
     int a[5];
     input(a,5);
+    display(a);
+    display(prefix);
+    cout<<findSumRange(1,3);
     return 0;
 }
