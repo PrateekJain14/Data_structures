@@ -32,7 +32,7 @@ int main()
 {
     int ele;
     struct Array arr = {{2,3,4,5,6},10,5};
-    ele = del(&arr,3);
+    ele = del(&arr,5);
     if(ele != -1){
     cout<<"\n Deleted element :"<< ele;
     }
