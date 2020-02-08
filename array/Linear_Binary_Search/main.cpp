@@ -77,7 +77,7 @@ int main()
 
     searchBinary = BinarySearchRecursion(arr,3,0,arr.length-1);
     if(searchBinary != -1){
-    cout<<"\n Binary search recursion element found at position  :"<< searchBinary+1;
+    cout<<"\n Binary search recursion element found at position  : "<< searchBinary+1;
     }
     //display(arr);
     return 0;
