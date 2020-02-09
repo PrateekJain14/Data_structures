@@ -8,6 +8,7 @@ struct Array{
 };
 
 void display(struct Array arr){
+	cout<<"Array :\n";
  for(int i=0;i<arr.length;i++){
         cout<<"\n"<<arr.A[i];
     }
