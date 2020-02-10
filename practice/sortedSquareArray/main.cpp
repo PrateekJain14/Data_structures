@@ -19,6 +19,27 @@ for(int i=0;i<size-1;i++){
 }
 }
 
+void sortMethodSecond(int b[],int size){
+int left = 0;
+int right = size-1;
+int temp[size];
+for(int i=size-1;i>=0;i--)
+{
+    if(abs(b[left])>b[right]){
+        temp[i] = b[left]*b[left];
+        left++;
+    }
+    else{
+        temp[i] = b[right]*b[right];
+        right--;
+    }
+}
+for(int i=0;i<size;i++){
+    b[i] = temp[i];
+}
+}
+
+
 int main()
 {
     int a[] = {-5,-3,-1,2,4};
@@ -28,6 +49,13 @@ int main()
     for(int i=0;i<size;i++){
     cout<<a[i]<<" ";
     }
-    cout<<endl;
+    cout<<endl<<"-------------"<<"\n";
+    int b[] = {-5,-2,-1,3,4};
+    size = sizeof b/sizeof b[0];
+    sortMethodSecond(b,size);
+
+    for(int i=0;i<size;i++){
+    cout<<b[i]<<" ";
+    }
     return 0;
 }
