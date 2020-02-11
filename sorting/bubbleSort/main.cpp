@@ -2,6 +2,12 @@
 
 using namespace std;
 
+void swap(int *a, int *b){
+int temp = *a;
+*a= *b;
+*b = temp;
+}
+
 void bubblesort(int a[], int size){
 for(int i=0;i<size-1;i++){
     for(int j=0;j<size-1-i;j++){
@@ -10,6 +16,11 @@ for(int i=0;i<size-1;i++){
         }
     }
 }
+}
+
+void display(int a[]){
+for(int i=0;i<5;i++)
+    cout<<a[i]<<" ";
 }
 int main()
 {
