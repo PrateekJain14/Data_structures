@@ -13,7 +13,7 @@ void selectionSort(int a[], int size){
 int min;
 for(int i = 0;i < size-1; i++){
     min = i;
-    for(int j = i+1; j < size-1; j++){
+    for(int j = i+1; j < size; j++){
         if(a[j]<a[min]){
             min = j;
         }
@@ -23,8 +23,16 @@ for(int i = 0;i < size-1; i++){
 }
 }
 
+void disp(int a[], int size){
+for(int i=0;i<size;i++){
+    cout<< a[i]<<" ";
+}
+}
+
 int main()
 {
-    cout << "Hello world!" << endl;
+    int a[] = {7, 1, 3, 20, 15, 100, 50};
+    selectionSort(a,7);
+    disp(a,7);
     return 0;
 }
