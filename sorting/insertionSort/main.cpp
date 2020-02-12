@@ -8,18 +8,17 @@ int temp = *a;
 *b = temp;
 }
 
-// Find smallest and set it to first location and so on.
+// add element and sort sub array
 void insertionSort(int a[], int size){
-int min;
-for(int i = 0;i < size-1; i++){
-    min = i;
-    for(int j = i+1; j < size; j++){
-        if(a[j]<a[min]){
-            min = j;
-        }
-    }
-    if(min != i)
-        swap(a[i],a[min]);
+int key,j;
+for(int i = 1;i < size; i++){
+key = a[i];
+j = i-1;
+while(j>=0 && a[j] > key){
+    a[j+1] = a[j];
+    j = j-1;
+}
+a[j+1] = key;
 }
 }
 
