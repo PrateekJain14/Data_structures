@@ -52,7 +52,7 @@ void leftRotation(struct Array *arr){
     for(i=0;i<arr->length-1;i++){
     arr->A[i] = arr->A[i+1];
     }
-    arr->A[arr->length-1]=rotateValue;
+    arr->A[arr->length-1]=rotateValue; 
 }
 
 int main()
