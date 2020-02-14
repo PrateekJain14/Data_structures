@@ -53,8 +53,8 @@ second = NULL;
 
 int main()
 {
-    int a[] = {2,4,6,8,10};
-    create(a,5);
+    int a[] = {2,4,6,8,10,11};
+    create(a,6);
     int b[] = {1,3,5};
     createAnother(b,3);
     display(first);
