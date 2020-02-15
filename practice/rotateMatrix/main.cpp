@@ -35,7 +35,27 @@ void rotatematrix(int m, int n, int mat[R][C])
         }
         n--;
 
+        if (row < m)
+        {
+            for (int i = n-1; i >= col; i--)
+            {
+                curr = mat[m-1][i];
+                mat[m-1][i] = prev;
+                prev = curr;
+            }
+        }
+        m--;
 
+        if (col < n)
+        {
+            for (int i = m-1; i >= row; i--)
+            {
+                curr = mat[i][col];
+                mat[i][col] = prev;
+                prev = curr;
+            }
+        }
+        col++;
     }
 
     for (int i=0; i<R; i++)
