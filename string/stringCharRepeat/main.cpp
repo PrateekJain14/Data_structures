@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    char a[] = "finding";
+    char a[] = "findings";
 
     // using hash table as here all the char are between 97 to 122
     int asc[26]={0};
