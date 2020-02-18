@@ -15,7 +15,7 @@ int main()
     int row,col,nonz;
     cout<<"\nEnter number of rows :";
     cin>>row;
-    cout<<"\nEnter total number of columns :";
+    cout<<"\nEnter total number of columns  :";
     cin>>col;
 
     // Sparse matrix create
