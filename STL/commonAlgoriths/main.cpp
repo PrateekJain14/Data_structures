@@ -13,5 +13,10 @@ int main()
     cout<<"Vector : ";
     for(int i = 0 ; i<size;i++)
         cout<<vect[i]<<" ";
+
+    sort(vect.begin(),vect.end());
+    cout<<"\nVector : ";
+    for(int i = 0 ; i<size;i++)
+        cout<<vect[i]<<" ";
     return 0;
 }
