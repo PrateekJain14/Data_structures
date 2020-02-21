@@ -49,5 +49,14 @@ int main()
     list1.sort();
     cout<<"LIST 1 : ";
     printList(list1);
+    cout<<"-------------------------------------\n";
+    list<int> :: iterator i = list2.begin();
+    advance(i,2);
+    // advance is use to move iterator by x position
+    // in this case i will start pointing at element on 3rd position
+    //insert function will insert element at 3rd position thereby shifting all element to the right
+    list2.insert(i,5);
+    cout<<"LIST 2 : ";
+    printList(list2);
     return 0;
 }
