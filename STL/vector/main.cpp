@@ -25,5 +25,6 @@ int main()
     cout<<endl<<v.back();
     cout<<endl<<v.size();
     cout<<endl<<v.capacity();
+    cout<<endl<<v.at(3);
     return 0;
 }
