@@ -26,5 +26,28 @@ int main()
     printList(list1);
     cout<<"LIST 2 : ";
     printList(list2);
+    cout<<"-------------------------------------\n";
+    list2.pop_back();
+    list1.pop_front();
+
+    cout<<"LIST 1 : ";
+    printList(list1);
+    cout<<"LIST 2 : ";
+    printList(list2);
+    cout<<"-------------------------------------\n";
+
+    // reverse both list
+    list1.reverse();
+    list2.reverse();
+
+    cout<<"LIST 1 : ";
+    printList(list1);
+    cout<<"LIST 2 : ";
+    printList(list2);
+
+    cout<<"-------------------------------------\n";
+    list1.sort();
+    cout<<"LIST 1 : ";
+    printList(list1);
     return 0;
 }
