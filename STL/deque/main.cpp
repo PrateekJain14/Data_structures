@@ -1,5 +1,6 @@
 #include <iostream>
 #include <deque>
+#include <vector>
 
 using namespace std;
 
@@ -32,5 +33,18 @@ int main()
     cout<<"=======================\n";
     que.pop_front();
     showQueue(que);
+    cout<<"=======================\n";
+    deque<int> :: iterator it = que.begin();
+    ++it;
+    que.insert(it, 5);
+    showQueue(que);
+    cout<<"=======================\n";
+    que.insert(it, 2,3);
+    showQueue(que);
+    cout<<"=======================\n";
+    vector<int> vect(1,0);
+    que.insert(it,vect.begin(),vect.end());
+    showQueue(que);
+    cout<<"=======================\n";
     return 0;
 }
