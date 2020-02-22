@@ -18,5 +18,19 @@ int main()
     que.push_front(40);
 
     showQueue(que);
+
+    cout<<"=======================\n";
+    cout<<"Queue size : "<<que.size()<<endl;
+    cout<<"Queue max size : "<<que.max_size()<<endl;
+    cout<<"Queue element at position : "<<que.at(2)<<endl;
+    cout<<"Queue front : "<<que.front()<<endl;
+    cout<<"Queue back : "<<que.back()<<endl;
+
+    cout<<"=======================\n";
+    que.pop_back();
+    showQueue(que);
+    cout<<"=======================\n";
+    que.pop_front();
+    showQueue(que);
     return 0;
 }
