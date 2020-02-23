@@ -42,7 +42,7 @@ int main()
     que.insert(it, 2,3);
     showQueue(que);
     cout<<"=======================\n";
-    vector<int> vect(1,0);
+    vector<int> vect(1,5);
     que.insert(it,vect.begin(),vect.end());
     showQueue(que);
     cout<<"=======================\n";
