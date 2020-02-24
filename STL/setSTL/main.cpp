@@ -41,5 +41,10 @@ int main()
         cout<<*it<<" ";
     }
     cout<<"\n=========================\n";
+
+    cout<<"Lower Bound Set 1 : "<<*st.lower_bound(20)<<endl;
+    cout<<"Upper Bound Set 1 : "<<*st.upper_bound(20)<<endl;
+    cout<<"Lower Bound Set 2 : "<<*st1.lower_bound(70)<<endl;
+    cout<<"Upper Bound Set 2 : "<<*st1.lower_bound(70)<<endl;
     return 0;
 }
