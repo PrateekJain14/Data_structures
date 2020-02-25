@@ -27,6 +27,24 @@ int main()
     }
     cout<<"\n=========================\n";
 
+    multiset<int> st1(st.begin(),st.end());
+    cout<<"Set 2 : ";
+    for(it = st1.begin(); it != st1.end(); ++it){
+        cout<<*it<<" ";
+    }
+    cout<<"\n=========================\n";
 
+    st1.erase(st1.begin(),st1.find(30));  // it will delete all element before 30
+    // to delete single element simply use st.erase(element_name);
+    cout<<"Set 2 : ";
+    for(it = st1.begin(); it != st1.end(); ++it){
+        cout<<*it<<" ";
+    }
+    cout<<"\n=========================\n";
+
+    cout<<"Lower Bound Set 1 : "<<*st.lower_bound(20)<<endl;
+    cout<<"Upper Bound Set 1 : "<<*st.upper_bound(20)<<endl;
+    cout<<"Lower Bound Set 2 : "<<*st1.lower_bound(70)<<endl;
+    cout<<"Upper Bound Set 2 : "<<*st1.lower_bound(70)<<endl;
     return 0;
 }
