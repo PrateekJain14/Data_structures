@@ -30,5 +30,19 @@ int main()
     for(it = mp2.begin();it != mp2.end(); ++it){
         cout<<"\t"<<it->first<<"\t"<<it->second<<endl;
     }
+
+    mp2.erase(7);
+    cout<<"MAP 2 :\n";
+    cout<<"\tKey\tValue\n";
+    for(it = mp2.begin();it != mp2.end(); ++it){
+        cout<<"\t"<<it->first<<"\t"<<it->second<<endl;
+    }
+
+    mp2.erase(mp2.begin(),mp2.find(4));
+    cout<<"MAP 2 :\n";
+    cout<<"\tKey\tValue\n";
+    for(it = mp2.begin();it != mp2.end(); ++it){
+        cout<<"\t"<<it->first<<"\t"<<it->second<<endl;
+    }
     return 0;
 }
