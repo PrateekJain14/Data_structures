@@ -24,5 +24,36 @@ int main()
         cout<<"\t"<<it->first<<"\t"<<it->second<<endl;
     }
 
+    multimap<int, int> mp2(mp1.begin(), mp1.end());
+    cout<<"MAP 2 :\n";
+    cout<<"\tKey\tValue\n";
+    for(it = mp2.begin();it != mp2.end(); ++it){
+        cout<<"\t"<<it->first<<"\t"<<it->second<<endl;
+    }
+
+    mp2.erase(7);
+    cout<<"MAP 2 :\n";
+    cout<<"\tKey\tValue\n";
+    for(it = mp2.begin();it != mp2.end(); ++it){
+        cout<<"\t"<<it->first<<"\t"<<it->second<<endl;
+    }
+
+    mp2.erase(mp2.begin(),mp2.find(4));
+    cout<<"MAP 2 :\n";
+    cout<<"\tKey\tValue\n";
+    for(it = mp2.begin();it != mp2.end(); ++it){
+        cout<<"\t"<<it->first<<"\t"<<it->second<<endl;
+    }
+
+    cout << "\nmp1.lower_bound(5) : "
+         << "\tKEY = ";
+    cout << mp1.lower_bound(5)->first << '\t';
+    cout << "\tELEMENT = "
+         << mp1.lower_bound(5)->second << endl;
+    cout << "mp1.upper_bound(5) : "
+         << "\tKEY = ";
+    cout << mp1.upper_bound(5)->first << '\t';
+    cout << "\tELEMENT = "
+         << mp1.upper_bound(5)->second << endl;
     return 0;
 }
