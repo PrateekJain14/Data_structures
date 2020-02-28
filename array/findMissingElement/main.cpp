@@ -11,7 +11,7 @@ int main()
     int difference = a[0];
     for(int i=1;i<length;i++){
         if(a[i]-i != difference){
-            cout<<"missing element is :"<<i+difference;
+            cout<<"missing element is : "<<i+difference;
         }
     }
 
