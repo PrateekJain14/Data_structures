@@ -3,7 +3,7 @@
 #include <cctype>
 using namespace std;
 
-void reverseString(char name[],int length){
+void reverseString(char name[],int length){ // if taken pointer then string becomes immutable
     int i,j;
     char t;
 for(i=0,j=length-1;i<j;i++,j--){
