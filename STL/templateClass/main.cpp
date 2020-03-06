@@ -6,7 +6,7 @@ class A  {
     T x;
     U y;
 public:
-    A() {    cout<<"Constructor Called"<<endl;   }
+    A() {    cout<<"Constructor Called "<<endl;   }
 };
 
 int main()  {
