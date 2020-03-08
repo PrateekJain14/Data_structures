@@ -31,7 +31,7 @@ for(int i=0;i<size;i++){
 
 int main()
 {
-    int a[] = {7, 1, 3, 20, 15, 100, 50};
+    int a[] = {7, 1, 3, 20, 15, 100, 75};
     selectionSort(a,7);
     disp(a,7);
     return 0;
