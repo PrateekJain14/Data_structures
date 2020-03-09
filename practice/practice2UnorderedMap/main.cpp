@@ -24,7 +24,8 @@ int main() {
 	    for(long j=0;j<str.length();j++){
 	        if(mp.find(str[j]) != mp.end()){
 	            flag = 1;
-	            key = min(key,j);
+	            key = j;
+	            break;
 	        }
 	    }
 	    if(flag == 1){
