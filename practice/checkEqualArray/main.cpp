@@ -1,58 +1,40 @@
 #include <iostream>
-#include <unordered_map>
+#include <algorithm>
 using namespace std;
 
 int main() {
 	//code
-	int t,size=0,i,j;
+	int t;
+	long size=0;
 	cin>>t;
-	unordered_map<int,int> mp;
 	while(t--){
+	int flag = 0;
 	cin>>size;
-	int a[size] = {0};
-	int b[size] = {0};
-	for(i=0;i<size;i++){
+	long a[size],b[size];
+	for(int i=0;i<size;i++){
 	    cin>>a[i];
 	}
-	for(i=0;i<size;i++){
-	    if(mp.find(a[i]) == mp.end()){
-	        mp[a[i]] = 1;
-	    }
-	    else{
-	        mp[a[i]]++;
-	    }
-	}
-	for(j=0;j<size;j++){
+	sort(a,a+size);
+	for(int j=0;j<size;j++){
 	    cin>>b[j];
 	}
-	int flag = 0;
+	sort(b,b+size);
 	for(int j=0;j<size;j++){
-	    if(mp.find(b[j]) != mp.end()){
-	        mp[b[j]]--;
-	    }
-	    else{
+	    if(a[j] != b[j]){
 	        flag = 1;
 	        break;
 	    }
 	}
 	if(flag == 1){
-	    cout<<"0"<<endl;
+	    cout<<"0\n";
 	}
 	else{
-	   	for(int j=0;j<size;j++){
-           if(mp[b[j]] != 0) {
-              flag = 1;
-              break;
-           }
-      	}
-      	if(flag == 1){
-	            cout<<"0"<<endl;
-	       }
-	   else{
-	            cout<<"1\n";
-	        }
+	    cout<<"1\n";
 	}
+
 	}
+	return 0;
+}
 
 	// alternative use algorithm library and sort
 
@@ -88,6 +70,3 @@ int main() {
 	}
 
 }*/
-
-	return 0;
-}
