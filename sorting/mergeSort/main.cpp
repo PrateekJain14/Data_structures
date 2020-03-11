@@ -8,7 +8,7 @@ for(int i=0;i<size;i++){
     cout<< a[i]<<" ";
 }
 }
-void merge(int arr[], int l, int m, int r)
+void mergeImplement(int arr[], int l, int m, int r)
 {
     int i, j, k;
     int n1 = m - l + 1;
@@ -52,9 +52,9 @@ void merge(int arr[], int l, int m, int r)
 }
 
 
-void mergeSort(int a[],int l,h){
+void mergeSort(int a[],int l,int h){
 if(l<h){
-    int mid = l+(h-1)/2;
+    int mid = (l+(h-1))/2;
 
     mergeSort(a,l,mid);
     mergeSort(a,mid+1,h);
