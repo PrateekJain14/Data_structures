@@ -17,7 +17,7 @@ bool isEmpty(){
 void push(char x){
   struct Node * temp = new Node;
   if(!temp){
-      cout<<"Overflow";
+      cout<<"Overflow :";
   }
   else{
       temp->data = x;
