@@ -36,7 +36,7 @@ int main() {
 	        else{
 	            median=(q1.size() > q2.size()) ? q1.top() : q2.top();
 	        }
-	       cout<<median<<endl;
+	       cout<<"median is : "<<median<<endl;
 	}
 
 	return 0;
