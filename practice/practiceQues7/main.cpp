@@ -7,7 +7,12 @@ The task is to complete the method which takes one argument, root of Binary Tree
 */
 
 using namespace std;
-
+struct Node
+{
+    int data;
+    Node* left;
+    Node* right;
+};
 
 bool isHeap(Node * tree)
 {
