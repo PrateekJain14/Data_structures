@@ -2,8 +2,6 @@
 
 using namespace std;
 
-// To heapify a subtree rooted with node i which is
-// an index in arr[]. N is size of heap
 void heapify(int arr[], int n, int i)
 {
     int largest = i;
@@ -26,6 +24,7 @@ void heapify(int arr[], int n, int i)
 }
 
 // Function to build a Max-Heap from the given array
+//check heap sort from bottom-up approach
 void buildHeap(int arr[], int n)
 {
     // Index of last non-leaf node
