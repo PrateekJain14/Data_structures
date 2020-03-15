@@ -11,45 +11,72 @@ If array represents a Binary Max Heap, print "1", else print "0" (without quotes
 */
 using namespace std;
 
-bool isMaxHeap(int tree[],int n, int i){
+int checkMaxHeap(int *arr,int n)
+{
+    if(n == 1)
+        return 1;
+    int l,r;
+    for(int i = n/2 - 1; i>=0; i--)
+    {
+        l = 2*i+1;
+        r = 2*i+2;
+        if(l < n && arr[l] > arr[i])
+            return 0;
+        if(r < n && arr[r] > arr[i])
+            return 0;
+    }
+    return 1;
+}
+
+
+bool isMaxHeap(int tree[],int n, int i)
+{
     int left = 2*i+1;
     int right = 2*i+2;
-    if(i<n){
-        if(left < n && right < n){
+    if(i<n)
+    {
+        if(left < n && right < n)
+        {
             if(tree[i]>tree[left] && tree[i]>tree[right])
-            return (isMaxHeap(tree,n,left) && isMaxHeap(tree,n,right));
+                return (isMaxHeap(tree,n,left) && isMaxHeap(tree,n,right));
             else
-            return false;
+                return false;
         }
-        else if(left < n){
-             if(tree[i]>tree[left])
-              return (isMaxHeap(tree,n,left));
-             else
-              return false;
+        else if(left < n)
+        {
+            if(tree[i]>tree[left])
+                return (isMaxHeap(tree,n,left));
+            else
+                return false;
         }
-        else if(right < n){
-             if(tree[i]>tree[right])
-              return (isMaxHeap(tree,n,right));
-             else
-              return false;
+        else if(right < n)
+        {
+            if(tree[i]>tree[right])
+                return (isMaxHeap(tree,n,right));
+            else
+                return false;
         }
-       else
-          return true;
+        else
+            return true;
     }
 }
 
-int main() {
+int main()
+{
     int t,n;
     cin>>t;
-    while(t--){
+    while(t--)
+    {
         cin>>n;
         int a[n];
-        for(int i=0;i<n;i++){
+        for(int i=0; i<n; i++)
+        {
             cin>>a[i];
         }
         int val = isMaxHeap(a,n,0);
+        //int val = checkMaxHeap(a,n);
         cout<<val<<endl;
     }
-	//code
-	return 0;
+    //code
+    return 0;
 }
