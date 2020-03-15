@@ -10,3 +10,39 @@ three space separated integers X, Y, N. Then in the next line are N space separa
 Output:
 For each test case in a new line print the total number of jumps.
 */
+#include<iostream>
+using namespace std;
+int main()
+{
+    //code
+    int t,x,y,n;
+    cin>>t;
+    while(t--)
+    {
+        cin>>x>>y>>n;
+        int ht[n];
+        int jump = 0;
+        for(int i=0 ; i<n ; i++)
+            cin>>ht[i];
+        for(int i=0; i < n; i++)
+        {
+            int val = ht[i];
+            cout<<val<<"  "<<x<<endl;
+            if(val <= x)
+            {
+                jump++;
+                continue;
+            }
+            while(val > x)
+            {
+                val = val - x;
+                val = val + y;
+                jump++;
+            }
+            jump++;
+        }
+        cout<<jump<<endl;
+    }
+
+    return 0;
+}
