@@ -10,6 +10,7 @@ three space separated integers X, Y, N. Then in the next line are N space separa
 Output:
 For each test case in a new line print the total number of jumps.
 */
+
 #include<iostream>
 using namespace std;
 int main()
@@ -46,3 +47,5 @@ int main()
 
     return 0;
 }
+
+
