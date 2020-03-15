@@ -48,4 +48,42 @@ int main()
     return 0;
 }
 
+/*
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+ {
+	//code
+	int t,x,y,n;
+	cin>>t;
+	while(t--){
+	    cin>>x>>y>>n;
+	    int ht[n];
+	    int jump = 0;
+	    int meanJump = x-y;
+	    for(int i=0 ; i<n ; i++){
+	        cin>>ht[i];
+	        int val = ht[i];
+	        if(val <= x){
+	            jump++;
+	         }
+	        else{
+	          val = val - x;
+	          jump++;
+	          if(val > 0 && meanJump>0){
+	            float temp = ((float)val / (float)meanJump);
+	            cout<<temp<<"  "<<ceil(temp)<<endl;
+	            int add = ceil(temp);
+	            jump += add ;
+	          }
+
+	        }
+	    }
+	    cout<<jump<<endl;
+	}
+
+	return 0;
+}
+*/
 
