@@ -18,7 +18,7 @@ int main()
 {
     struct Array arr;
     int n;
-    cout<<"Enter size of array";
+    cout<<"Enter size of array : ";
     cin>>arr.size;
 
     arr.A = new int[arr.size];
