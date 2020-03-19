@@ -17,7 +17,7 @@ int main()
 {
 
     // only character and numbers are allowed
-    char name[] = "python";
+    char name[] = "pythons";
     int countChar=0;
     for(int i=0;name[i]!='\0';i++){
         countChar++;
