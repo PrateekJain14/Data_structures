@@ -34,7 +34,7 @@ int main()
     struct Array arr = {{2,3,4,5,6},10,5};
     ele = del(&arr,5);
     if(ele != -1){
-    cout<<"\n Deleted element :"<< ele;
+    cout<<"\n Deleted element is :"<< ele;
     }
     display(arr);
     return 0;
