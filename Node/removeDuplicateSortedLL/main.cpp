@@ -54,7 +54,7 @@ int main()
     int a[] = {10,15,15,25,30,30,35};
     create(a,7);
     display(first);
-    cout<<"\n------------\n";
+    cout<<"\n-------------------\n";
     delDuplicate(first);
     display(first);
     return 0;
