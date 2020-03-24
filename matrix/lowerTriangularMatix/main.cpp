@@ -58,7 +58,7 @@ int main()
     cin>>d;
     LowerTriangle lt(d);
     int x;
-    cout<<"Enter all the elements"<<endl;
+    cout<<"Enter all the elements "<<endl;
     for(int i=1;i<=d;i++){
             for(int j=1;j<=d;j++){
             cin>>x;
